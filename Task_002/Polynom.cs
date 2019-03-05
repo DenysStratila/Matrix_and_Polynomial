@@ -14,6 +14,9 @@ namespace Task_002
 
         public Polynom(double[] coefficients, int degree)
         {
+            if (degree < 0)
+                throw new DegreeIsLessThanZeroException("This degree is less than 0");
+
             pairs = new Dictionary<int, double>();
 
             Add(coefficients, degree);
